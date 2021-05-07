@@ -14,5 +14,395 @@ BlankSlate WordPress Theme © 2011-2019 TidyThemes
 BlankSlate is distributed under the terms of the GNU GPL
 */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}button{outline:0}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}q{display:inline;font-style:italic}q:before{content:'"';font-style:normal}q:after{content:'"';font-style:normal}textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"]{-webkit-appearance:none;appearance:none;border-radius:0}table{border-collapse:collapse;border-spacing:0}th,td{padding:2px}big{font-size:120%}small,sup,sub{font-size:80%}sup{vertical-align:super}sub{vertical-align:sub}dd{margin-left:20px}kbd,tt{font-family:courier;font-size:12px}ins{text-decoration:underline}del,strike,s{text-decoration:line-through}dt{font-weight:bold}address,cite,var{font-style:italic}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Poller+One|Raleway);
+
+body{
+	padding: 0;
+	margin: 0;
+	background: #fff7e7;
+}
+body, p, li{
+  font-family: "Raleway", sans-serif;
+/*  font-family: "Poller One", cursive;
+  font-family: "Covered By Your Grace", cursive;*/
+}
+h3{
+	color: #ce4f00;
+}
+nav{
+	position: relative;
+	z-index: 3;
+}
+.panel{
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	opacity: 0;
+	transition: all ease .5s;
+	overflow: hidden;
+}
+.panel.active{
+	z-index: 1;
+	opacity: 1;
+	height: auto;
+	min-height: 100vh;
+}
+content{
+	display:block;
+	margin: 60px auto 0;
+	max-width: 1000px;
+	padding: 15px;
+}
+
+nav ul{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+nav ul li{
+	display: inline-block;
+	margin: 10px 20px;
+}
+a.link{
+	text-decoration: none;
+	color:#777;
+	transition: all ease .5s;
+	font-weight: bold;
+}
+a.link:hover, a.link.active-page{
+	color: #ce4f00;
+	border-bottom: ;
+}
+
+/*homepage animations*/
+#black-screen{
+	background: #000;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+#hi{
+	z-index:6;
+}
+.intro{
+	font-size: 40px;
+	text-align: center;
+}
+.intro h2 {
+	font-family: "Poller One", cursive;
+	font-size: 20vw;
+	font-weight: bold;
+	padding-top: 60px;
+	color: #ce4f00;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top:-50px;
+	position: relative;
+	opacity: 0;
+	transition: all ease 3s;
+}
+.intro h2.bringIn {
+	margin-top: 50px;
+	opacity: 1;
+}
+.video-background {
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.fa-heart{
+	color:#ce4f00;
+}
+.intro p{
+	margin-top: 0;
+}
+#coding-history{
+	font-weight: bold;
+	color: #ce4f00;
+}
+#project-list{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+#project-list li{
+	display:inline-block;
+	width: 100%;
+	margin: 10px 0;
+}
+
+#project-list li .header,
+#project-list li .projectFooter{
+	padding: 5px;
+}
+#project-list li .projectFooter a{
+	text-decoration: none;
+	display:inline-block;
+	margin: 0 5px;
+}
+
+#project-list li .description {
+    height: 100px;
+}
+
+ul.skills{
+	margin:0 0 20px;
+	padding: 0;
+	text-align: center;
+}
+li.filter{
+	display:inline-block;
+	margin: 0 10px;
+	padding: 0 10px 5px;
+	font-weight: bold;
+	cursor: pointer;
+	color:#9c9c9c;
+	transition: all ease .5s;
+	border-bottom: 3px solid #fff7e7;
+}
+li.filter.active-filter, li.filter:hover{
+	color:#ce4f00;
+	border-bottom: 3px solid #ce4f00;
+}
+
+li.react{
+	background: #61dafb;
+	color: #20232a;
+}
+li.react .header{
+	background: #20232a;
+	color: #61dafb;
+}
+li.react .projectFooter{
+	background: #20232a;
+	color: #61dafb;
+}
+li.react .projectFooter a{
+	color: #61dafb;
+}
+li.react h3{
+	color: #20232a;
+}
+
+
+li.angular{
+	background: #fff;
+	color: #ce4f00;
+}
+li.angular .header{
+	background: #358ee1;
+	color: #fff;
+}
+li.angular .projectFooter{
+	background: #358ee1;
+	color: #fff;
+}
+li.angular .projectFooter a{
+	color: #fff;
+}
+li.vanilla h3{
+	color: #c3002f;
+}
+
+
+li.jquery{
+	background: #78cff5;
+	color: #0769ad;
+}
+li.jquery .header{
+	background: #0769ad;
+	color: #fff;
+}
+li.jquery .projectFooter{
+	background: #0769ad;
+	color: #78cff5;
+}
+li.jquery .projectFooter a{
+	color: #78cff5;
+}
+li.jquery h3{
+	color: #0769ad;
+}
+
+
+li.wordpress{
+	background: #fff;
+	color: #20232a;
+}
+li.wordpress .header{
+	background: #21759b;
+	color: #fff;
+}
+li.wordpress .projectFooter{
+	background: #21759b;
+	color: #fff;
+}
+li.wordpress .projectFooter a{
+	color: #fff;
+}
+li.wordpress h3{
+	color: #21759b;
+}
+
+
+li.vanilla{
+	color: #9435cf;
+	background:#e9dcf1;
+}
+li.vanilla .header{
+	background: #9435cf;
+	color: #fff;
+}
+li.vanilla .projectFooter{
+	background: #9435cf;
+	color: #e9dcf1;
+}
+li.vanilla .projectFooter a{
+	color: #e9dcf1;
+}
+li.vanilla h3{
+	color: #9435cf;
+}
+
+.about-text{
+	width: 100%;
+	float:left;
+}
+
+.skill-column{
+	width: 45%;
+	float:left;
+	box-sizing: border-box;
+	padding-left: 10px;
+	margin: 0;
+}
+.skill-column li{
+	list-style: none;
+	color: #ce4f00;
+	font-weight: bold;
+}
+.skill-column li ul{
+	padding-left: 20px;
+}
+.skill-column li ul li{
+	color:#555;
+	font-weight: normal;
+	list-style: square;
+	margin: 5px 0;
+}
+.hidden-text {
+    opacity: 0;
+    margin-top: -50px;
+    display: block;
+    font-size: 16px;
+    font-family: "Covered By Your Grace", cursive;
+    transition: all 1.5s ease;
+}
+.hidden-text.bringIn {
+    opacity: 1;
+    margin-top: 10px;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+video{
+	min-height: 100vh;
+	min-width: 100%;
+	opacity: 0;
+	transition: all ease 3s;
+}
+video.bringIn{
+	opacity: 1;
+}
+
+.contact-modal{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,.8);
+	z-index: 10;
+	display:none;
+}
+.contact-modal .content{
+	background: #fff;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 26px;
+	border-radius: 20px;
+	color:#555;
+	font-weight: bold;
+}
+#close-modal{
+	float: right;
+	text-decoration: none;
+	color:#ff946c;
+	font-weight: bold;
+	font-size: 18px;
+	cursor: pointer;
+	transition: all ease .3s;
+}
+#close-modal:hover{
+	color:#f95719;
+}
+.contact-modal .content a{
+	display:block;
+	margin-top: 20px;
+	text-decoration: none;
+	color:#555;
+	transition: all ease .5s;
+}
+.contact-modal .content a:hover{
+	color:#000;
+
+}
+
+@media screen and (min-width: 600px){
+	#project-list li{
+		width: 250px;
+	}
+	.intro h2 {
+	    color: #ce4f00;
+	    font-size: 90px;
+	}
+	.hidden-text.bringIn {
+    color: #000;
+    font-size: 25px;
+	}
+	.hidden-text {
+	    color: #000;
+	    font-size: 25px;
+	}
+	.intro{
+		font-size: 60px;
+		text-align: center;
+	}
+	.skill-column{
+		width: 20%;
+	}
+	.about-text{
+		width: 55%;
+	}
+}
+
