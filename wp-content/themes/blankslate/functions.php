@@ -44,6 +44,12 @@ $("html").addClass("opera");
 </script>
 <?php
 }
+add_action('wp_enqueue_scripts', 'custom_portfolio_script');
+function custom_portfolio_script() {
+    wp_enqueue_script('custom', get_stylesheet_directory_uri().'/scripts/script.js', 
+    array(), false, true);
+}
+
 add_filter( 'document_title_separator', 'blankslate_document_title_separator' );
 function blankslate_document_title_separator( $sep ) {
 $sep = '|';

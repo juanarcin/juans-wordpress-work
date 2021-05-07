@@ -1,10 +1,11 @@
-</div>
-<footer id="footer">
-<div id="copyright">
-&copy; <?php echo esc_html( date_i18n( __( 'Y', 'blankslate' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-</div>
-</footer>
-</div>
+	<div class="contact-modal">
+		<div class="content">
+			<span id="close-modal">Close</span>
+			JuanArcin@gmail.com
+			<a href="https://www.linkedin.com/in/juanarciniega" target="_blank">linkedin.com/in/juanarciniega</a>
+			<a href="https://github.com/juanarcin" target="_blank">github.com/juanarcin</a>
+		</div>
+	</div>
 <?php wp_footer(); ?>
 </body>
 </html>
