@@ -43,7 +43,6 @@ nav{
 	top: 0;
 	left: 0;
 	z-index: 0;
-	opacity: 0;
 	transition: all ease .5s;
 	overflow: hidden;
 }
@@ -60,22 +59,23 @@ content{
 	padding: 15px;
 }
 
-nav ul{
+nav ul#menu-menu-1{
 	text-align: center;
 	padding: 0;
 	margin: 0;
 }
-nav ul li{
+nav ul#menu-menu-1 li{
 	display: inline-block;
 	margin: 10px 20px;
 }
-a.link{
+nav ul#menu-menu-1 li a{
 	text-decoration: none;
 	color:#777;
 	transition: all ease .5s;
 	font-weight: bold;
 }
-a.link:hover, a.link.active-page{
+nav ul#menu-menu-1 li a:hover, 
+nav ul#menu-menu-1 li.current-menu-item a{
 	color: #ce4f00;
 	border-bottom: ;
 }

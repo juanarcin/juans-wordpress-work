@@ -39,20 +39,6 @@ fetch('https://juans.work/shared/data.json')
 	})
 });
 
-
-// set nav functionality
-$('.link').click(function(){
-	let page = $(this).data('page');
-	if(page != 'contact'){
-		// switch page
-		$('.active').removeClass('active')
-		$(`#${page}`).addClass('active')
-		//upfdate nav
-		$('.active-page').removeClass('active-page');
-		$(this).addClass('active-page')
-	}
-})
-
 // set work filter funcitonality
 function fadeInActiveTag(tag){
 	let activeTag = `li.${tag}`;
@@ -99,7 +85,7 @@ function setCodingHistory(){
 }
 
 // contact modal
-$('a[data-page="contact"').click(function(){
+$('#menu-menu-1 li a[href="#"').click(function(){
 	$('.contact-modal').fadeIn();
 })
 $('#close-modal').click(function(){
